@@ -32,16 +32,16 @@ Make sure you have the following installed on your machine:
 
 ### Clone the Repository
 
-To clone the repository, use the following command (replace `<your-github-url>` with the actual URL once you have the repo):
+To clone the repository, use the following command:
 
 ```bash
-git clone <your-github-url>
+git clone https://github.com/Milan-Cruz/coding_assignment12
 ```
 
 Navigate into the cloned project directory:
 
 ```bash
-cd <repository-folder>
+cd coding_assignment12
 ```
 
 ### Install Dependencies
