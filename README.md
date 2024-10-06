@@ -1,46 +1,135 @@
-# Getting Started with Create React App
+# React Storybook - UI Garden
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+This repository contains reusable UI components built with React, styled using StyledComponents, and documented with Storybook. Each component includes two states: default and disabled, offering versatility for use in various UI scenarios.
 
-In the project directory, you can run:
+### Components:
 
-### `yarn start`
+- Button
+- Label
+- Text
+- Table (with Header, Row, Cell, and Footer)
+- Dropdown
+- Radio Button
+- Image
+- Hero Image
+- Card
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Created by Milan Cruz while coursing RRC Polytech Full Stack Web Development.**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `yarn build`
+Make sure you have the following installed on your machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js** (v16+)
+- **npm** (latest)
+- **Docker** (latest)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To clone the repository, use the following command (replace `<your-github-url>` with the actual URL once you have the repo):
 
-### `yarn eject`
+```bash
+git clone <your-github-url>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Navigate into the cloned project directory:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd <repository-folder>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Install Dependencies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project uses npm for dependency management. Install the necessary dependencies by running:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building the Docker Container
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can host the Storybook UI by building the Docker container. To do so, execute the following command:
+
+```bash
+docker build -t cruz_milan_coding_assignment12 .
+```
+
+This will build the Docker image and tag it as `cruz_milan_coding_assignment12`.
+
+### Running the Docker Container
+
+To run the container and host Storybook on port 8083, use the following command:
+
+```bash
+docker run -p 8083:8080 --name ui_garden cruz_milan_coding_assignment12:latest
+```
+
+This command maps port 8080 inside the container to port 8083 on your machine, allowing you to access Storybook at:
+
+```
+http://localhost:8083
+```
+
+### Accessing Storybook
+
+Once the container is running, open your browser and go to:
+
+```
+http://localhost:8083
+```
+
+Here, you can interact with the following components, each with both **default** and **disabled** states:
+
+- **Button**
+- **Label**
+- **Text**
+- **Table** (including Header, Row, Cell, and Footer)
+- **Dropdown**
+- **Radio Button**
+- **Image**
+- **Hero Image**
+- **Card**
+
+### Stopping the Docker Container
+
+To stop the running container, use:
+
+```bash
+docker stop ui_garden
+```
+
+If you want to remove the container entirely, use:
+
+```bash
+docker rm ui_garden
+```
+
+---
+
+## Development
+
+To develop locally without Docker, you can run the Storybook server directly by using:
+
+```bash
+npm run storybook
+```
+
+This will launch Storybook on the default port (usually 6006).
+
+---
+
+## Conclusion
+
+You have now successfully hosted your React Storybook components in a Docker container! The components can be tested and visualized in both their **default** and **disabled** states.
+
+---
+
+**Created by Milan Cruz while coursing RRC Polytech Full Stack Web Development.**
+
+---
