@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import Dropdown from './Dropdown';
+import React from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Dropdown from './Dropdown'
 
 test('renders dropdown with options', () => {
   render(
@@ -11,13 +11,13 @@ test('renders dropdown with options', () => {
       ]}
       onChange={() => {}}
     />
-  );
-  expect(screen.getByText(/Option 1/i)).toBeVisible();
-  expect(screen.getByText(/Option 2/i)).toBeVisible();
-});
+  )
+  expect(screen.getByText(/Option 1/i)).toBeVisible()
+  expect(screen.getByText(/Option 2/i)).toBeVisible()
+})
 
 test('calls onChange when option is selected', () => {
-  const handleChange = jest.fn();
+  const handleChange = jest.fn()
   render(
     <Dropdown
       options={[
@@ -26,12 +26,12 @@ test('calls onChange when option is selected', () => {
       ]}
       onChange={handleChange}
     />
-  );
+  )
   fireEvent.change(screen.getByDisplayValue('Option 1'), {
     target: { value: 'option2' },
-  });
-  expect(handleChange).toHaveBeenCalledWith('option2');
-});
+  })
+  expect(handleChange).toHaveBeenCalledWith('option2')
+})
 
 test('dropdown is disabled and non-interactive', () => {
   render(
@@ -43,8 +43,8 @@ test('dropdown is disabled and non-interactive', () => {
       onChange={() => {}}
       disabled
     />
-  );
-  const dropdownElement = screen.getByRole('combobox');
-  expect(dropdownElement).toBeDisabled();  // Ensure the dropdown is disabled
-  expect(dropdownElement).toHaveStyle('cursor: not-allowed');  // Ensure the cursor style changes
-});
+  )
+  const dropdownElement = screen.getByRole('combobox')
+  expect(dropdownElement).toBeDisabled() // Ensure the dropdown is disabled
+  expect(dropdownElement).toHaveStyle('cursor: not-allowed') // Ensure the cursor style changes
+})

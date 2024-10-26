@@ -1,19 +1,19 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import Table from './Table';
-import TableHeader from './TableHeader';
-import TableRow from './TableRow';
-import TableCell from './TableCell';
-import TableFooter from './TableFooter';
-import { TableProps } from './Table.types';
+import React from 'react'
+import { StoryFn, Meta } from '@storybook/react'
+import Table from './Table'
+import TableHeader from './TableHeader'
+import TableRow from './TableRow'
+import TableCell from './TableCell'
+import TableFooter from './TableFooter'
+import { TableProps } from './Table.types'
 
 export default {
   title: 'Components/Table',
   component: Table,
   argTypes: {
-    disabled: { control: 'boolean' },  // Add control for disabled state
+    disabled: { control: 'boolean' }, // Add control for disabled state
   },
-} as Meta;
+} as Meta
 
 const Template: StoryFn<TableProps> = (args) => (
   <Table {...args}>
@@ -40,14 +40,14 @@ const Template: StoryFn<TableProps> = (args) => (
       </TableRow>
     </TableFooter>
   </Table>
-);
+)
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-  disabled: false,  // Default is not disabled
-};
+  disabled: false, // Default is not disabled
+}
 
-export const Disabled = Template.bind({});
+export const Disabled = Template.bind({})
 Disabled.args = {
-  disabled: true,  // Disabled state
-};
+  disabled: true, // Disabled state
+}

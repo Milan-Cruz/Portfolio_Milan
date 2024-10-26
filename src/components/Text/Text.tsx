@@ -1,6 +1,6 @@
-import React from 'react';
-import { TextProps } from './Text.types';
-import styled from 'styled-components';
+import React from 'react'
+import { TextProps } from './Text.types'
+import styled from 'styled-components'
 
 const StyledInput = styled.input<{ disabled: boolean }>`
   padding: 10px;
@@ -16,9 +16,14 @@ const StyledInput = styled.input<{ disabled: boolean }>`
     outline: none;
     border-color: blue;
   }
-`;
+`
 
-const Text: React.FC<TextProps> = ({ placeholder, value, onChange, disabled = false }) => {
+const Text: React.FC<TextProps> = ({
+  placeholder,
+  value,
+  onChange,
+  disabled = false,
+}) => {
   return (
     <StyledInput
       type="text"
@@ -27,7 +32,7 @@ const Text: React.FC<TextProps> = ({ placeholder, value, onChange, disabled = fa
       onChange={onChange}
       disabled={disabled}
     />
-  );
-};
+  )
+}
 
-export default Text;
+export default Text

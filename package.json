@@ -19,17 +19,27 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint src/components/**/*.{js,ts,jsx,tsx}",
+    "lint:fix": "eslint src/components/**/*.{js,ts,jsx,tsx} --fix",
+    "format": "prettier --write src/components/**/*.{js,ts,jsx,tsx}",
+    "format-check": "prettier --check src/components/**/*.{js,ts,jsx,tsx}",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest",
       "plugin:storybook/recommended"
-    ]
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -57,11 +67,17 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.13",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-storybook": "^0.8.0",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.3",
     "prop-types": "^15.8.1",
     "storybook": "^8.3.2",
+    "typescript-eslint": "^8.11.0",
     "webpack": "^5.94.0"
   }
 }

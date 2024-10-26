@@ -1,10 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Table from './Table';
-import TableHeader from './TableHeader';
-import TableRow from './TableRow';
-import TableCell from './TableCell';
-import TableFooter from './TableFooter';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import Table from './Table'
+import TableHeader from './TableHeader'
+import TableRow from './TableRow'
+import TableCell from './TableCell'
+import TableFooter from './TableFooter'
 
 test('renders the table with header, rows, and footer', () => {
   render(
@@ -28,11 +28,11 @@ test('renders the table with header, rows, and footer', () => {
         </TableRow>
       </TableFooter>
     </Table>
-  );
-  expect(screen.getByText(/Header 1/i)).toBeVisible();
-  expect(screen.getByText(/Row 1, Cell 1/i)).toBeVisible();
-  expect(screen.getByText(/Footer 1/i)).toBeVisible();
-});
+  )
+  expect(screen.getByText(/Header 1/i)).toBeVisible()
+  expect(screen.getByText(/Row 1, Cell 1/i)).toBeVisible()
+  expect(screen.getByText(/Footer 1/i)).toBeVisible()
+})
 
 test('applies correct styles when table is disabled', () => {
   render(
@@ -56,9 +56,9 @@ test('applies correct styles when table is disabled', () => {
         </TableRow>
       </TableFooter>
     </Table>
-  );
+  )
 
-  const tableElement = screen.getByRole('table');
-  expect(tableElement).toHaveStyle('cursor: not-allowed');  // Ensure the cursor style changes
-  expect(tableElement).toHaveStyle('opacity: 0.6');  // Ensure opacity is reduced for disabled state
-});
+  const tableElement = screen.getByRole('table')
+  expect(tableElement).toHaveStyle('cursor: not-allowed') // Ensure the cursor style changes
+  expect(tableElement).toHaveStyle('opacity: 0.6') // Ensure opacity is reduced for disabled state
+})

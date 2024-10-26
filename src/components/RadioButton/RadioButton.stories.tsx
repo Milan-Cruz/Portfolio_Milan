@@ -1,7 +1,7 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
-import RadioButton from './RadioButton';
-import { RadioButtonProps } from './RadioButton.types';
+import React from 'react'
+import { StoryFn, Meta } from '@storybook/react'
+import RadioButton from './RadioButton'
+import { RadioButtonProps } from './RadioButton.types'
 
 export default {
   title: 'Components/RadioButton',
@@ -9,26 +9,26 @@ export default {
   argTypes: {
     label: { control: 'text' },
     checked: { control: 'boolean' },
-    disabled: { control: 'boolean' },  // Add control for disabled state
+    disabled: { control: 'boolean' }, // Add control for disabled state
   },
-} as Meta;
+} as Meta
 
-const Template: StoryFn<RadioButtonProps> = (args) => <RadioButton {...args} />;
+const Template: StoryFn<RadioButtonProps> = (args) => <RadioButton {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Option 1',
   value: 'option1',
   checked: false,
-  disabled: false,  // Default is not disabled
+  disabled: false, // Default is not disabled
   onChange: () => {},
-};
+}
 
-export const Disabled = Template.bind({});
+export const Disabled = Template.bind({})
 Disabled.args = {
   label: 'Option 1 (Disabled)',
   value: 'option1',
   checked: false,
-  disabled: true,  // Disabled state
+  disabled: true, // Disabled state
   onChange: () => {},
-};
+}

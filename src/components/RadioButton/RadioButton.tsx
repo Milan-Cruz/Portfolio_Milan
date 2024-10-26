@@ -1,14 +1,20 @@
-import React from 'react';
-import { RadioButtonProps } from './RadioButton.types';
-import styled from 'styled-components';
+import React from 'react'
+import { RadioButtonProps } from './RadioButton.types'
+import styled from 'styled-components'
 
 const StyledRadioButton = styled.input<{ disabled?: boolean }>`
   margin-right: 8px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-`;
+`
 
-const RadioButton: React.FC<RadioButtonProps> = ({ label, value, onChange, checked, disabled = false }) => {
+const RadioButton: React.FC<RadioButtonProps> = ({
+  label,
+  value,
+  onChange,
+  checked,
+  disabled = false,
+}) => {
   return (
     <label>
       <StyledRadioButton
@@ -20,7 +26,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({ label, value, onChange, check
       />
       {label}
     </label>
-  );
-};
+  )
+}
 
-export default RadioButton;
+export default RadioButton
