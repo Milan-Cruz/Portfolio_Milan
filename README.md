@@ -1,8 +1,8 @@
-# React Storybook - UI Garden
+# React Component Library - UI Garden (with Code Quality Checks)
 
 ## Project Overview
 
-This repository contains reusable UI components built with React, styled using StyledComponents, and documented with Storybook. Each component includes two states: default and disabled, offering versatility for use in various UI scenarios.
+This repository contains reusable UI components built with React, styled using StyledComponents, and documented with Storybook. Each component includes two states: default and disabled, offering versatility for use in various UI scenarios. The project is now equipped with **code quality checks** to ensure consistent formatting, linting, and successful test runs before committing changes to Git.
 
 ### Components:
 
@@ -16,7 +16,18 @@ This repository contains reusable UI components built with React, styled using S
 - Hero Image
 - Card
 
-**Created by Milan Cruz while coursing RRC Polytech Full Stack Web Development.**
+**Created by Milan Cruz while attending the RRC Polytech Full Stack Web Development program.**
+
+---
+
+## Code Quality Checks
+
+This project enforces strict code quality using the following tools:
+
+- **ESLint**: To enforce coding standards and catch linting issues.
+- **Prettier**: To automatically format code and maintain consistent styling.
+- **React Script Tests (Jest)**: To run unit tests and ensure component functionality.
+- **Husky**: To run these checks automatically before every commit, preventing bad uploads to Git.
 
 ---
 
@@ -35,13 +46,13 @@ Make sure you have the following installed on your machine:
 To clone the repository, use the following command:
 
 ```bash
-git clone https://github.com/Milan-Cruz/coding_assignment12
+git clone https://github.com/Milan-Cruz/coding_assignment13
 ```
 
 Navigate into the cloned project directory:
 
 ```bash
-cd coding_assignment12
+cd coding_assignment13
 ```
 
 ### Install Dependencies
@@ -52,36 +63,45 @@ This project uses npm for dependency management. Install the necessary dependenc
 npm install
 ```
 
+### Pre-Commit Checks
+
+This project enforces code quality using Husky with the following pre-commit checks:
+- **Prettier** for code formatting
+- **ESLint** for linting
+- **Jest** for running tests
+
+These checks will run automatically before every commit.
+
 ### Building the Docker Container
 
-You can host the Storybook UI by building the Docker container. To do so, execute the following command:
+The Docker container hosts a **production build** of the component library. To build the container, run the following command:
 
 ```bash
-docker build -t cruz_milan_coding_assignment12 .
+docker build -t cruz_milan_coding_assignment13 .
 ```
 
-This will build the Docker image and tag it as `cruz_milan_coding_assignment12`.
+This will build the Docker image and tag it as `cruz_milan_coding_assignment13`.
 
 ### Running the Docker Container
 
-To run the container and host Storybook on port 8083, use the following command:
+To run the container and host the web application on port `8018`, use the following command:
 
 ```bash
-docker run -p 8083:8080 --name ui_garden cruz_milan_coding_assignment12:latest
+docker run --name cruz_milan_coding_assignment13 -p 8018:8018 cruz_milan_coding_assignment13
 ```
 
-This command maps port 8080 inside the container to port 8083 on your machine, allowing you to access Storybook at:
+You can now access the web application at:
 
 ```
-http://localhost:8083
+http://localhost:8018
 ```
 
-### Accessing Storybook
+### Accessing the Production Build
 
 Once the container is running, open your browser and go to:
 
 ```
-http://localhost:8083
+http://localhost:8018
 ```
 
 Here, you can interact with the following components, each with both **default** and **disabled** states:
@@ -101,35 +121,34 @@ Here, you can interact with the following components, each with both **default**
 To stop the running container, use:
 
 ```bash
-docker stop ui_garden
+docker stop cruz_milan_coding_assignment13
 ```
 
 If you want to remove the container entirely, use:
 
 ```bash
-docker rm ui_garden
+docker rm cruz_milan_coding_assignment13
 ```
 
 ---
 
 ## Development
 
-To develop locally without Docker, you can run the Storybook server directly by using:
+To develop locally without Docker, you can run the application or Storybook server directly by using:
 
 ```bash
-npm run storybook
+npm run start     # For running the Create React App
+npm run storybook # For running Storybook on port 6006
 ```
-
-This will launch Storybook on the default port (usually 6006).
 
 ---
 
 ## Conclusion
 
-You have now successfully hosted your React Storybook components in a Docker container! The components can be tested and visualized in both their **default** and **disabled** states.
+You have now successfully hosted your React component library in a Docker container! The components can be tested and visualized in both their **default** and **disabled** states.
 
 ---
 
-**Created by Milan Cruz while coursing RRC Polytech Full Stack Web Development.**
+**Created by Milan Cruz while attending the RRC Polytech Full Stack Web Development program.**
 
 ---
