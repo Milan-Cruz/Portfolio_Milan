@@ -45,8 +45,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/Milan-Cruz/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/Milan-Cruz/Portfolio_Milan.git
+cd Portfolio_Milan
 ```
 
 ## Build and Run with Docker
