@@ -1,154 +1,108 @@
-# React Component Library - UI Garden (with Code Quality Checks)
+# Milan Cruz - Portfolio Website
+
+This is my **portfolio website** developed using **React** with TypeScript and styled using **Bootstrap**. The site showcases my skills and projects, including my top works while studying at **RRC Polytech**. The application is containerized using **Docker** for easy deployment and hosting.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repository](#clone-the-repository)
+- [Build and Run with Docker](#build-and-run-with-docker)
+  - [Step 1: Build the Docker Image](#step-1-build-the-docker-image)
+  - [Step 2: Run the Docker Container](#step-2-run-the-docker-container)
+  - [Step 3: Access the Application](#step-3-access-the-application)
+- [Stopping and Removing the Container](#stopping-and-removing-the-container)
+- [Contact](#contact)
 
 ## Project Overview
 
-This repository contains reusable UI components built with React, styled using StyledComponents, and documented with Storybook. Each component includes two states: default and disabled, offering versatility for use in various UI scenarios. The project is now equipped with **code quality checks** to ensure consistent formatting, linting, and successful test runs before committing changes to Git.
+This portfolio website was created to showcase my projects and experience in web development. The site features:
 
-### Components:
+- A responsive design with a dark theme using Bootstrap.
+- A hero section with my introduction and the MERN stack highlights.
+- A showcase of my most important projects.
+- A contact button for reaching out.
 
-- Button
-- Label
-- Text
-- Table (with Header, Row, Cell, and Footer)
-- Dropdown
-- Radio Button
-- Image
-- Hero Image
-- Card
+## Technologies Used
 
-**Created by Milan Cruz while attending the RRC Polytech Full Stack Web Development program.**
-
----
-
-## Code Quality Checks
-
-This project enforces strict code quality using the following tools:
-
-- **ESLint**: To enforce coding standards and catch linting issues.
-- **Prettier**: To automatically format code and maintain consistent styling.
-- **React Script Tests (Jest)**: To run unit tests and ensure component functionality.
-- **Husky**: To run these checks automatically before every commit, preventing bad uploads to Git.
-
----
+- **React** with TypeScript
+- **Bootstrap** for styling
+- **Docker** for containerization
+- **Nginx** for serving the production build
 
 ## Getting Started
 
+Follow these instructions to get a copy of the project up and running on your local machine.
+
 ### Prerequisites
 
-Make sure you have the following installed on your machine:
-
-- **Node.js** (v16+)
-- **npm** (latest)
-- **Docker** (latest)
+- **Docker** installed on your system. You can download Docker from [Docker's official website](https://www.docker.com/get-started).
 
 ### Clone the Repository
 
-To clone the repository, use the following command:
+Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/Milan-Cruz/coding_assignment13
+git clone https://github.com/Milan-Cruz/portfolio-website.git
+cd portfolio-website
 ```
 
-Navigate into the cloned project directory:
+## Build and Run with Docker
+
+The Docker setup will create a container that hosts a production build of the portfolio website.
+
+### Step 1: Build the Docker Image
+
+To build the Docker image, run the following command:
 
 ```bash
-cd coding_assignment13
+docker build -t cruz_milan_coding_assignment14 .
 ```
 
-### Install Dependencies
+### Step 2: Run the Docker Container
 
-This project uses npm for dependency management. Install the necessary dependencies by running:
+Start the Docker container with the following command:
 
 ```bash
-npm install
+docker run -d -p 5575:80 --name cruz_milan_coding_assignment14 cruz_milan_coding_assignment14
 ```
 
-### Pre-Commit Checks
+- **`-d`**: Runs the container in detached mode (in the background).
+- **`-p 5575:80`**: Maps port 5575 on your host to port 80 in the container.
+- **`--name`**: Names the container as `cruz_milan_coding_assignment14`.
 
-This project enforces code quality using Husky with the following pre-commit checks:
-- **Prettier** for code formatting
-- **ESLint** for linting
-- **Jest** for running tests
+### Step 3: Access the Application
 
-These checks will run automatically before every commit.
+Open your web browser and navigate to:
 
-### Building the Docker Container
+```
+http://localhost:5575
+```
 
-The Docker container hosts a **production build** of the component library. To build the container, run the following command:
+You should see my portfolio website running, showcasing my projects and skills.
+
+## Stopping and Removing the Container
+
+To stop the running container:
 
 ```bash
-docker build -t cruz_milan_coding_assignment13 .
+docker stop cruz_milan_coding_assignment14
 ```
 
-This will build the Docker image and tag it as `cruz_milan_coding_assignment13`.
-
-### Running the Docker Container
-
-To run the container and host the web application on port `8018`, use the following command:
+To remove the container:
 
 ```bash
-docker run --name cruz_milan_coding_assignment13 -p 8018:8018 cruz_milan_coding_assignment13
+docker rm cruz_milan_coding_assignment14
 ```
 
-You can now access the web application at:
-
-```
-http://localhost:8018
-```
-
-### Accessing the Production Build
-
-Once the container is running, open your browser and go to:
-
-```
-http://localhost:8018
-```
-
-Here, you can interact with the following components, each with both **default** and **disabled** states:
-
-- **Button**
-- **Label**
-- **Text**
-- **Table** (including Header, Row, Cell, and Footer)
-- **Dropdown**
-- **Radio Button**
-- **Image**
-- **Hero Image**
-- **Card**
-
-### Stopping the Docker Container
-
-To stop the running container, use:
+To remove the Docker image:
 
 ```bash
-docker stop cruz_milan_coding_assignment13
+docker rmi cruz_milan_coding_assignment14
 ```
 
-If you want to remove the container entirely, use:
+## Contact
 
-```bash
-docker rm cruz_milan_coding_assignment13
-```
-
----
-
-## Development
-
-To develop locally without Docker, you can run the application or Storybook server directly by using:
-
-```bash
-npm run start     # For running the Create React App
-npm run storybook # For running Storybook on port 6006
-```
-
----
-
-## Conclusion
-
-You have now successfully hosted your React component library in a Docker container! The components can be tested and visualized in both their **default** and **disabled** states.
-
----
-
-**Created by Milan Cruz while attending the RRC Polytech Full Stack Web Development program.**
-
----
+If you have any questions or would like to reach out, please feel free to contact me via the "Contact Me" button on the website.

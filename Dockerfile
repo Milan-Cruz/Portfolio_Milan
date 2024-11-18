@@ -1,19 +1,25 @@
-# Use Node.js version 20
-FROM node:20-alpine
+# Use an official Node.js image as the base for building the app
+FROM node:20-alpine AS build
 
-# Set the working directory and copy package.json for dependency installation
-WORKDIR /Cruz_Milan_ui_garden_build_checks
+# Set the working directory inside the container
+WORKDIR /Cruz_Milan_final_site
+
+# Copy package.json and package-lock.json, and install dependencies
 COPY package*.json ./
+RUN npm install
 
-# Install dependencies and build the Storybook in one step
-RUN npm install && npm run build-storybook
-
-# Copy the entire project into the container
+# Copy the rest of the application files and build the React app for production
 COPY . .
+RUN npm run build
 
-# Install a web server and expose port 8083 for serving the Storybook
-RUN npm install -g http-server
+# Use an official Nginx image to serve the production build
+FROM nginx:alpine
 
-# Expose port 8083 and serve the built Storybook
-EXPOSE 8018
-CMD ["http-server", "storybook-static"]
+# Copy the build folder from the previous stage to the Nginx HTML directory
+COPY --from=build /Cruz_Milan_final_site/build /usr/share/nginx/html
+
+# Expose the port the app will run on
+EXPOSE 5575
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
