@@ -8,7 +8,7 @@ const MyNavbar: React.FC = () => {
         <Navbar.Brand href="#home">Milan Cruz Portfolio</Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link href="#projects">Projects</Nav.Link>
-          <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav.Link href="#contactMe">Contact</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

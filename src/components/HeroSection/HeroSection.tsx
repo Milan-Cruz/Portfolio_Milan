@@ -43,6 +43,7 @@ const HeroSection: React.FC = () => {
 
           {/* Buttons for each section */}
           <div
+            id="contactMe"
             className="mt-4"
             style={{
               display: 'grid',
