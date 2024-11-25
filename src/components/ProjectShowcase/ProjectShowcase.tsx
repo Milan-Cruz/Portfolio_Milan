@@ -1,11 +1,11 @@
-import React from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
-import Img from '../Img/Img';
+import React from 'react'
+import { Card, Row, Col } from 'react-bootstrap'
+import Img from '../Img/Img'
 
 interface Project {
-  title: string;
-  image: string;
-  link: string;
+  title: string
+  image: string
+  link: string
 }
 
 const projects: Project[] = [
@@ -29,7 +29,7 @@ const projects: Project[] = [
     image: '/assets/guess-who.png',
     link: 'https://github.com/Milan-Cruz/LetsCode-Modulo04-WhoStarWars',
   },
-];
+]
 
 const ProjectShowcase: React.FC = () => {
   return (
@@ -64,7 +64,7 @@ const ProjectShowcase: React.FC = () => {
         ))}
       </Row>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectShowcase;
+export default ProjectShowcase
