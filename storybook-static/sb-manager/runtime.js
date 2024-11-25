@@ -11820,10 +11820,7 @@ y to select.'
 a(gI, 'getA11yStatusMessage')
 function sf(e, t) {
   return (
-    (e = Array.isArray(e)
-      ? /* istanbul ignore next (preact) */
-        e[0]
-      : e),
+    (e = Array.isArray(e) ? /* istanbul ignore next (preact) */ e[0] : e),
     !e && t ? t : e
   )
 }
@@ -12479,11 +12476,7 @@ var gf = 0,
             S.onPress
             var O = S.index,
               w = S.item,
-              T =
-                w === void 0
-                  ? /* istanbul ignore next */
-                    void 0
-                  : w,
+              T = w === void 0 ? /* istanbul ignore next */ void 0 : w,
               P = ke(S, TI)
             O === void 0
               ? (o.items.push(T), (O = o.items.indexOf(T)))

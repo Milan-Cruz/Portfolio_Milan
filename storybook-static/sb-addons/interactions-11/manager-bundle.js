@@ -17991,16 +17991,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             { style: { color: n.base } },
             '[\u2026]'
           )
-        let o = t
-            .slice(0, 3)
-            .map((u, i) =>
-              b.createElement(mt, {
-                key: `${i}--${JSON.stringify(u)}`,
-                value: u,
-                nested: !0,
-                callsById: r,
-              })
-            ),
+        let o = t.slice(0, 3).map((u, i) =>
+            b.createElement(mt, {
+              key: `${i}--${JSON.stringify(u)}`,
+              value: u,
+              nested: !0,
+              callsById: r,
+            })
+          ),
           a = gl(o, b.createElement('span', null, ', '))
         return t.length <= 3
           ? b.createElement('span', { style: { color: n.base } }, '[', a, ']')
